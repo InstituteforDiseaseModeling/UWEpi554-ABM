@@ -1,4 +1,5 @@
 import starsim as ss
+import matplotlib.pyplot as plt
 
 # Make the SIR infection
 sir = ss.SIR(dur_inf=10, beta=0.2,
@@ -12,7 +13,6 @@ sim = ss.Sim(n_agents=2_000,
     networks=ss.RandomNet())
 sim.run()
 
-import matplotlib.pyplot as plt
-sim.plot('NCD')
+sim.plot('ncd')
 sim.plot('sir')
 plt.show()

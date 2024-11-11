@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # Make people using the specified age distribution
 n_agents = 5000
-pregnancy = False
+pregnancy = True
 
 age_data = pd.DataFrame({
     'age': [0, 15, 50, 100],
