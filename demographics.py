@@ -22,9 +22,9 @@ demog = [deaths]
 
 if pregnancy:
     # Pregnancy
-    fertility_rates = 60 # Time,AgeGrp,ASFR
+    fertility_rates = 60
     # Age-specific fertility rate (births per 1,000 women per year): 60 for ages 15-44, 0 from 45
-    fertility_rates = pd.DataFrame({
+    fertility_rates = pd.DataFrame({ # Time,AgeGrp,ASFR
         'Time': [2020, 2020],
         'AgeGrp': [15, 45],
         'ASFR': [60.0, 0], 

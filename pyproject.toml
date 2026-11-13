@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Scripts to introduce UW Epi554 students to agent-based modeling"
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.10,<3.13"
+requires-python = ">=3.11,<3.13"
 dependencies = [
     # Pinned to the version current when these scripts were written (Nov 2024; 2.2.0 is the first release with ss.nbinom).
     # Starsim 3.x changed the time/units API used in simulation.py and elsewhere.
