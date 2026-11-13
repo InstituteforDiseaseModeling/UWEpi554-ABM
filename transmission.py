@@ -13,7 +13,7 @@ sim = ss.Sim(n_agents=5_000, diseases=sir, networks=random, label='Poisson')
 sims = [sim]
 
 for n in [0.2, 95]:
-    net = ss.RandomNet(n_contacts = ss.negative_binomial(n=n, p=n/(n+lam)))
+    net = ss.RandomNet(n_contacts = ss.nbinom(n=n, p=n/(n+lam)))
     sim = ss.Sim(n_agents=5_000, diseases=sir, networks=net, label=f'Negative Binomial (x_var {1+lam/n:.2f})', rand_seed=seed)
     sims.append(sim)
 
