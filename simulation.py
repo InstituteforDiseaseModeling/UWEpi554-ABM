@@ -1,5 +1,7 @@
+# Template showing the building blocks of a Starsim simulation. Replace each
+# `...` with a module (see the other scripts), or delete the line, before running.
 import starsim as ss
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 
 sim_pars = dict(
     start = ss.date('2024-11-12'),

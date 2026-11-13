@@ -1,7 +1,6 @@
-import starsim as ss
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
+import starsim as ss
 
 sim = ss.Sim(n_agents=100).init()
 
@@ -19,7 +18,8 @@ d.plot_hist() # Let's see a histogram of the random numbers
 x = d.rvs(n=15)
 print('Some normal random numbers:', x)
 
-# Normal distribution with mean based on age
+# Normal distribution with mean based on age. Any distribution parameter can be a
+# function: Starsim calls it with the requested agents' uids and uses one value per agent
 def loc_by_age(self, sim, uids):
     return sim.people.age[uids]
 

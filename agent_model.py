@@ -14,6 +14,7 @@ N = 100 # Total population size
 maxtime = 10 # How long to simulate for
 npts = 100 # Number of time points during the simulation
 dt = maxtime/npts # Timestep length
+seed = 1 # Random seed: same seed, same epidemic. Change it to see a different stochastic outcome
 
 
 class Person:
@@ -48,6 +49,8 @@ class Sim:
     """ Define the simulation """
     
     def __init__(self):
+        np.random.seed(seed) # Seed the random number generator so runs are reproducible
+
         # Create the arrays -- one entry per timestep
         self.x = np.arange(npts)
         self.S = np.zeros(npts)

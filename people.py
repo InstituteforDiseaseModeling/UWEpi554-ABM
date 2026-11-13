@@ -17,8 +17,8 @@ sim.init()
 print(sim.people)
 print(sim.people.age)
 
-under_15 = sim.people.age < 15
-u15_uids = under_15.uids
+under_15 = sim.people.age < 15 # Boolean array, one entry per agent
+u15_uids = under_15.uids # Unique IDs of the agents where under_15 is True
 
 print(under_15)
 print(under_15.uids)

@@ -14,7 +14,8 @@ age_data = pd.DataFrame({
 ppl = ss.People(n_agents, age_data=age_data)
 
 # Deaths
-death_rates = 15 # Time,Sex,AgeGrpStart,mx
+death_rates = 15 # Deaths per 1,000 people per year. Could instead be a DataFrame of
+                 # age/sex-specific rates using UN WPP columns: Time, Sex, AgeGrpStart, mx
 deaths = ss.Deaths(death_rate=death_rates)
 
 demog = [deaths]
@@ -22,6 +23,7 @@ demog = [deaths]
 if pregnancy:
     # Pregnancy
     fertility_rates = 60 # Time,AgeGrp,ASFR
+    # Age-specific fertility rate (births per 1,000 women per year): 60 for ages 15-44, 0 from 45
     fertility_rates = pd.DataFrame({
         'Time': [2020, 2020],
         'AgeGrp': [15, 45],
@@ -31,7 +33,8 @@ if pregnancy:
     demog += [pregnancy]
 else:
     # Births
-    birth_rates = 15 # Year,CBR
+    birth_rates = 15 # Crude birth rate per 1,000 people per year. Could instead be a
+                     # DataFrame of rates by year using UN WPP columns: Year, CBR
     births = ss.Births(birth_rate=birth_rates)
     demog += [births]
 
